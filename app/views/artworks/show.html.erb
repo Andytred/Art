@@ -1,0 +1,17 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <h2>Artwork</h2>
+  <div class="d-flex">
+      <button type="button" class="btn btn-dark">
+        <%= link_to 'Sign in', new_user_session_url %>
+      </button>
+
+      <button type="button" class="btn btn-light">
+        <%= link_to 'Sign up', new_user_registration_url %>
+      </button>
+    </div>
+</div>
+
+<h2><%= @artwork.title %></h2>
+<p><%= @artwork.description %></p>
+<p><%= @artwork.price_per_hour %></p>
+
