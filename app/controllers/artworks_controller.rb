@@ -1,5 +1,8 @@
 class ArtworksController < ApplicationController
-  
+  def index
+    @artworks = Artwork.all
+  end
+
   def new
     @artwork = Artwork.new
   end
@@ -16,7 +19,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
-    
+
   end
 
   private
