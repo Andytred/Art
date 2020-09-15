@@ -10,8 +10,38 @@
       </button>
     </div>
 </div>
+<div class="container d-flex flex-column align-items-center w-50">
+    <h1><%= @artwork.title %></h1>
+    <div class="rounded">
+        <%= cl_image_tag @artwork.photo.key, class: "artwork-img"  %>
+    </div>
 
-<h2><%= @artwork.title %></h2>
-<p><%= @artwork.description %></p>
-<p><%= @artwork.price_per_hour %></p>
+    <div class="d-flex justify-content-between w-100 mt-4 px-4">
+      <div class="text-left">
+      
+        <p class="border-bottom"><%= @artwork.description %></p>
+        <ul>
+          <li><%= @artwork.user.email %></li>
+          <li><%= @artwork.price_per_hour %></li>
+        </ul>
+       
+        
+      </div>
+      <div>
+        <form>
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname">
+            <button type="button" class="btn btn-dark">
+              <%= link_to 'Book' %>
+            </button>
+        </form>
+      </div>
+    </div>
+    
+    
+    
+</div>
+
 
