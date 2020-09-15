@@ -1,6 +1,6 @@
 
  <!-- Navbar -->
-<nav class="navbar navbar-light navbar-lewagon">
+<nav class="navbar navbar-light navbar-lewagon fixed-top">
 
   <div class="container">
     <p> Art </p>
@@ -17,23 +17,43 @@
 
 </nav>
 
-<div class="container">
+<div class="main-container">
 
-  <h1> These are the artworks corresponding to your search </h1>
+  <div class="text-center">
+    <h4> These are the artworks corresponding to your search </h4>
+  </div>
 
   <div class="container">
-
     <div class="row">
-      <ul>
-        <div class="col-sm">
-          <% @artworks.each do |artwork| %>
-            <li> <%= artwork.title  %> </li>
-          <%end  %>
+      <% @artworks.each do |artwork| %>
+        <div class="col-lg-4 col-sm-12">
+          <div class="card" >
+            <% if !artwork.photo.attached? %>
+                <img class="card-img-top" src='https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60' alt="Card image">
+            <% else %>
+                <div style="width: 18rem; background-image: url('<%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>')" class="card-img-top" alt="...">
+                </div>
+            <% end %>
+              <div class="card-body">
+
+                <h6> <%= artwork.title %> </h6>
+
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text"> <%= artwork.price_per_hour %> </p>
+                    <p class="card-text"> euros </p>
+                  </div>
+                  <button type="button" class="btn btn-secondary">
+                    <!-- link_to show, artwork_url-->
+                    Show
+                  </button>
+                </div>
+              </div>
+
+          </div>
         </div>
-      </ul>
-
+      <% end %>
     </div>
-
   </div>
 
 
