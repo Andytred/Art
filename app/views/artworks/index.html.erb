@@ -1,0 +1,41 @@
+
+ <!-- Navbar -->
+<nav class="navbar navbar-light navbar-lewagon">
+
+  <div class="container">
+    <p> Art </p>
+    <div class="d-flex">
+      <button type="button" class="btn btn-dark">
+        <%= link_to 'Sign in', new_user_session_url %>
+      </button>
+
+      <button type="button" class="btn btn-light">
+        <%= link_to 'Sign up', new_user_registration_url %>
+      </button>
+    </div>
+  </div>
+
+</nav>
+
+<div class="container">
+
+  <h1> These are the artworks corresponding to your search </h1>
+
+  <div class="container">
+
+    <div class="row">
+      <ul>
+        <div class="col-sm">
+          <% @artworks.each do |artwork| %>
+            <li> <%= artwork.title  %> </li>
+          <%end  %>
+        </div>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+</div>
