@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: grey;
+  background: rgba(255,255,255,0.8);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +13,24 @@
 
 p {
   text-align: center;
+}
+
+.btn {
+  font-weight: 100;
+}
+
+.btn .btn-light{
+border-right: 10px;
+}
+
+.btn-dark a {
+color: rgba(255,255,255,1);
+}
+
+.btn-light a {
+color: rgba(0,0,0,1);
+}
+
+p {
+  font-size: 0.5rem;
 }

@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <div class="banner d-flex align-items-center justify-content-between">
+    <div class="bannertextbox">
+      <h3>  Design your space </h3>
+      <h3>  Rent an artwork </h3>
+    </div>
+    <button type="button" class="btn btn-dark btn-sm">
+          <%= link_to 'View available artworks', artworks_path %>
+        </button>
+  </div>
+</div>
