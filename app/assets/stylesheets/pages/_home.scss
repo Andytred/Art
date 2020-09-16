@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: url("https://www.francetvinfo.fr/image/75rxp88cz-824a/1200/450/21261559.jpg");
+  margin-top:50px;
+  color: rgba(0,0,0,1);
+  border-radius: 5px;
+  text-align: left;
+  margin-bottom: 30px;
+  font-family: inherit;
+}
+
+.bannertextbox {
+  background: rgba(255,255,255,0.6);
+  text-align: center;
+  width: 250px;
+  height:100%;
+  padding: 60px;
+}
+.footer {
+  background: rgba(0,0,0,1);
+  width: 100%;
+}
+
+i {
+  color: white;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.btn {
+  height: 50px;
+  margin-right: 20px;
+}
