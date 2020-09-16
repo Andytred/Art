@@ -1,47 +1,43 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <h2>Artwork</h2>
-  <div class="d-flex">
-      <button type="button" class="btn btn-dark">
-        <%= link_to 'Sign in', new_user_session_url %>
-      </button>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <h2>Artwork</h2>
+    <div class="d-flex">
+        <button type="button" class="btn btn-dark">
+          <%= link_to 'Sign in', new_user_session_url %>
+        </button>
 
-      <button type="button" class="btn btn-light">
-        <%= link_to 'Sign up', new_user_registration_url %>
-      </button>
-    </div>
-</div>
-<div class="container d-flex flex-column align-items-center w-50">
-    <h1><%= @artwork.title %></h1>
-    <div class="rounded">
-        <%= cl_image_tag @artwork.photo.key, class: "artwork-img"  %>
-    </div>
+        <button type="button" class="btn btn-light">
+          <%= link_to 'Sign up', new_user_registration_url %>
+        </button>
+      </div>
+  </div>
+  <div class="d-flex flex-column align-items-center w-50">
+      <h1><%= @artwork.title %></h1>
+      <div class="rounded">
+          <%= cl_image_tag @artwork.photo.key, class: "artwork-img"  %>
+      </div>
 
-    <div class="d-flex justify-content-between w-100 mt-4 px-4">
-      <div class="text-left">
-      
-        <p class="border-bottom"><%= @artwork.description %></p>
-        <ul>
-          <li><%= @artwork.user.email %></li>
-          <li><%= @artwork.price_per_hour %></li>
-        </ul>
-       
-        
+      <div class="d-flex justify-content-between w-100 mt-4 px-4">
+        <div class="text-left">
+
+          <p class="border-bottom"><%= @artwork.description %></p>
+          <ul>
+            <li><%= @artwork.user.email %></li>
+            <li><%= @artwork.price_per_hour %></li>
+          </ul>
+
+
+        </div>
+        <div>
+          <%= simple_form_for [ @artwork, @transaction ] do |f| %>
+            <%= f.input :start_date, as: :string, placeholder: "dd/mm/yyyy" %>
+            <%= f.input :end_date, as: :string, placeholder: "dd/mm/yyyy" %>
+            <%= f.submit "Book", class: "btn btn-dark" %>
+          <% end %>
+        </div>
       </div>
-      <div>
-        <form>
-          <label for="fname">First name:</label><br>
-          <input type="text" id="fname" name="fname"><br>
-          <label for="lname">Last name:</label><br>
-          <input type="text" id="lname" name="lname">
-            <button type="button" class="btn btn-dark">
-              <%= link_to 'Book' %>
-            </button>
-        </form>
-      </div>
-    </div>
-    
-    
-    
+  </div>
 </div>
+
 
 

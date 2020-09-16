@@ -1,7 +1,39 @@
-<%= simple_form_for(@artwork) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price_per_hour %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: "btn-primary" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <h2>Artwork</h2>
+  <div class="d-flex">
+      <button type="button" class="btn btn-dark">
+        <%= link_to 'Sign in', new_user_session_url %>
+      </button>
+
+      <button type="button" class="btn btn-light">
+        <%= link_to 'Sign up', new_user_registration_url %>
+      </button>
+    </div>
+</div>
+
+<div class="img-form d-flex space-between">
+  <div>
+  <img src="https://images.unsplash.com/photo-1551913902-c92207136625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+  </div>
+  <div>
+    <%= simple_form_for(@artwork) do |f| %>
+    <div class="add_form w-100 mt-4 px-4">
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :price_per_hour %>
+      <div class="d-flex justify-content-between">
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, class: "btn btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>
+
+</div>
+
+  
+  
+
+</div>
+  

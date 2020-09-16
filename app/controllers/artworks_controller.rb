@@ -19,7 +19,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
-
+    @transaction = Transaction.new
   end
 
   private
