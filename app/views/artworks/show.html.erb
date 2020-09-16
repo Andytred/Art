@@ -25,19 +25,15 @@
             <li><%= @artwork.user.email %></li>
             <li><%= @artwork.price_per_hour %></li>
           </ul>
-        
-          
+
+
         </div>
         <div>
-          <form>
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname">
-              <button type="button" class="btn btn-dark">
-                <%= link_to 'Book' %>
-              </button>
-          </form>
+          <%= simple_form_for [ @artwork, @transaction ] do |f| %>
+            <%= f.input :start_date, as: :string, placeholder: "dd/mm/yyyy" %>
+            <%= f.input :end_date, as: :string, placeholder: "dd/mm/yyyy" %>
+            <%= f.submit "Book", class: "btn btn-dark" %>
+          <% end %>
         </div>
       </div>
   </div>
