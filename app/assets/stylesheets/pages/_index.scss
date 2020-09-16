@@ -1,2 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
+
+p {
+  margin-right: 5px;
+}
+
+.card {
+  margin-top: 10px;
+  height: 300px;
+}
+
+h4 {
+  margin:10px;
+  padding:10px;
+}
+
+.main-container {
+  padding-top: 60px;
+}
