@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light navbar-lewagon">
+
+    <div class="container">
+
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/f/fc/Artsy_logo.svg", alt: "Art", width: 50 %>
+
+      <div class="d-flex">
+
+        <button type="button" class="btn btn-light btn-sm">
+          <%= link_to 'Sign in', new_user_session_url %>
+        </button>
+
+        <button type="button" class="btn btn-dark btn-sm ml-3">
+          <%= link_to 'Sign up', new_user_registration_url %>
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
