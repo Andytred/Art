@@ -1,6 +1,13 @@
 class ArtworksController < ApplicationController
   def index
-    @artworks = Artwork.all
+    if params[:query].present?
+      sql_query = " \
+        artworks.address @@ :query \
+      "
+      @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artworks = Artwork.all
+    end
   end
 
   def new
