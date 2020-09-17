@@ -27,6 +27,11 @@ class ArtworksController < ApplicationController
   def show
     @artwork = Artwork.find(params[:id])
     @transaction = Transaction.new
+    # the `geocoded` scope filters only artworks with coordinates (latitude & longitude)
+    @markers = [
+      { lat: @artwork.latitude,
+        lng: @artwork.longitude }
+    ]
   end
 
   private
