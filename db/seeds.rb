@@ -24,7 +24,7 @@ end
 puts 'Finished!'
 
 puts 'Creating 50 fake artworks...'
-50.times do
+20.times do
   artwork = Artwork.new(
     title:    Faker::BossaNova.song,
     description: Faker::TvShows::GameOfThrones.quote,
