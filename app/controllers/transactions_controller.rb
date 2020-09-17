@@ -13,7 +13,8 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.all
+    @buy_transactions = current_user.transactions
+    @sell_transactions = current_user.sell_transactions
   end
 
   def accept
