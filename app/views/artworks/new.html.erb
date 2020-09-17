@@ -1,26 +1,17 @@
-<div class="img-form d-flex space-between">
+<div class="img-form d-flex space-between w-100 my-4 px-4">
   <div>
-  <img src="https://images.unsplash.com/photo-1551913902-c92207136625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <img src="https://images.unsplash.com/photo-1551913902-c92207136625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
   </div>
-  <div>
+  <div class="form_backrground flex-grow-1">
     <%= simple_form_for(@artwork) do |f| %>
-    <div class="add_form w-100 mt-4 px-4">
-          <%= f.input :title %>
-          <%= f.input :description %>
-          <%= f.input :price_per_hour %>
-      <div class="d-flex justify-content-between">
-          <%= f.input :photo, as: :file %>
-          <%= f.button :submit, class: "btn btn-lg btn-block" %>
+      <div class="add_form w-100 mt-4 px-4">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :price_per_hour %>
+            <%= f.input :photo, as: :file %>
+            <%= f.button :submit, class: "btn btn-lg btn-block" %>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 
 </div>
-
-
-
-
-</div>
-

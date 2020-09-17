@@ -12,6 +12,22 @@ class TransactionsController < ApplicationController
     @transaction.save
   end
 
+  def index
+    @transactions = Transaction.all
+  end
+
+  def accept
+    @transaction = Transaction.find(params[:transaction_id])
+    @transaction.accept!
+    redirect_to :transactions
+  end
+
+  def reject
+    @transaction = Transaction.find(params[:transaction_id])
+    @transaction.reject!
+    redirect_to :transactions
+  end
+
   private
 
   def transaction_params

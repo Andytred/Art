@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'open-uri'
-
 Transaction.destroy_all
 Artwork.destroy_all
 User.destroy_all
@@ -23,7 +22,6 @@ puts 'Creating 30 fake users...'
   user.save!
 end
 puts 'Finished!'
-
 
 puts 'Creating 50 fake artworks...'
 50.times do
