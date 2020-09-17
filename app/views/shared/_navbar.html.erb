@@ -1,11 +1,23 @@
 <nav class="navbar navbar-light navbar-lewagon">
 
     <div class="container">
-
-      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/f/fc/Artsy_logo.svg", alt: "Art", width: 50 %>
+      <%= link_to root_path do %>
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/f/fc/Artsy_logo.svg", alt: "Art", width: 50 %>
+      <% end %>
 
       <div class="d-flex">
+        
+      <% if user_signed_in? %>
 
+        
+        <button type="button" class="btn btn-light btn-sm">
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+          
+        </button>
+
+      <% else %>
+          
+        
         <button type="button" class="btn btn-light btn-sm">
           <%= link_to 'Sign in', new_user_session_url %>
         </button>
@@ -14,8 +26,10 @@
           <%= link_to 'Sign up', new_user_registration_url %>
         </button>
 
+        <% end %>
+
       </div>
 
     </div>
 
-  </nav>
+</nav>
