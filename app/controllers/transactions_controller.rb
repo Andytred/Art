@@ -5,11 +5,15 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
-    @artwork = Artwork.find(params[:artwork_id])
-    @transaction.artwork = @artwork
-    @transaction.buyer = current_user
-    @transaction.save
+    if current_user
+      @transaction = Transaction.new(transaction_params)
+      @artwork = Artwork.find(params[:artwork_id])
+      @transaction.artwork = @artwork
+      @transaction.buyer = current_user
+      @transaction.save
+    else
+      redirect_to :new_user_session
+    end
   end
 
   def index
