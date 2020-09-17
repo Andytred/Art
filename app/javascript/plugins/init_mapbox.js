@@ -7,17 +7,17 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/christophebrucker/ckf6r31q33u6h19oazk2oa58z'
     });
     // add markers
-    // const markers = JSON.parse(mapElement.dataset.markers);
-    // markers.forEach((marker) => {
-    //   new mapboxgl.Marker()
-    //     .setLngLat([ marker.lng, marker.lat ])
-    //     .addTo(map);
-    // });
+    const markers = JSON.parse(mapElement.dataset.markers);
+    markers.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+    });
     // Fit map to markers
-    //fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers);
   }
 };
 
