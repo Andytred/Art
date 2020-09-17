@@ -37,6 +37,7 @@ gem 'webpacker', '~> 5.x'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
