@@ -1,57 +1,61 @@
 <div class="container">
-  <div class="rectangle">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h1>Sell Transactions</h1>
-      <div class="row">
-        <% @sell_transactions.each do |transaction| %>
-          <div class="art-card fixed-height-two">
-            <div class="transaction">
-              <h3> <%= transaction.artwork.title %> </h3>
-              <p class="card-text"> <strong>From:</strong> <%= transaction.start_date %> <strong>To:</strong> <%= transaction.end_date %></p>
-              <p><strong>Price: </strong><%= (transaction.end_date - transaction.start_date).to_i * 8 * transaction.artwork.price_per_hour %>€</p>
-              <% if transaction.confirmation == 'pending' %>
-                <button type="button" class="btn btn-dark btn-sm ml-3">
-                  <%= link_to 'Accept', transaction_accept_path(transaction) %>
-                </button>
-                <button type="button" class="btn btn-light btn-sm">
-                  <%= link_to 'Reject', transaction_reject_path(transaction) %>
-                </button>
-              <% else %>
-                <h3><%= transaction.confirmation %></h3>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-6">
-      <h1>Buy Transactions</h1>
-      <div class="row">
-        <% @buy_transactions.each do |transaction| %>
-          <div class="art-card fixed-height-two">
-            <div class="transaction">
-              <h3> <%= transaction.artwork.title %> </h3>
-              <p class="card-text"> <strong>From:</strong> <%= transaction.start_date %> <strong>To:</strong> <%= transaction.end_date %></p>
-              <p><strong>Price: </strong><%= (transaction.end_date - transaction.start_date).to_i * 8 * transaction.artwork.price_per_hour %>€</p>
-              <h3><%= transaction.confirmation %></h3>
-            </div>
-          </div>
-        <% end %>
-      </div>
+  <div class="d-flex py-3">
+    <div style="background-image: url(<%= cl_image_path current_user.photo.key%>)" class="avatar"></div>
+    <div class="ml-3 bg-white flex-grow-1 text-center p-3">
+      <h5> <%= current_user.first_name  %> </h5>
+      <h5> <%= current_user.last_name  %></h5>
     </div>
   </div>
-</div>
 
+  <div class="mt-5">
+    <h3>Pending</h3>
+      <div class="pendingtransactions">
+           <% @pending_transactions.each do |transaction| %>
+           <div class="d-flex justify-content-between mb-3">
+            <div>
+              <h3> <%= transaction.artwork.title %> </h3>
+              <p class="card-text"> <strong>From:</strong> <%= transaction.start_date %> <strong>To:</strong> <%= transaction.end_date %></p>
+            </div>
+
+
+            <% if transaction.confirmation == 'pending' %>
+              <div class="d-flex">
+              <%= link_to 'Accept', transaction_accept_path(transaction) , class: "btn btn-light btn-sm btnloggedin" %>
+              <%= link_to 'Reject', transaction_reject_path(transaction) , class: "btn btn-light btn-sm btnloggedin" %>
+              </div>
+            <% end %>
+     </div>
+     <% end %>
+    </div>
+  </div>
+  <div class="mt-5">
+
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <h3> Artwork sold</h3>
+          <% @sold_transactions.each do |transaction| %>
+          <div class="art-card fixed-height-two">
+            <div class="transaction">
+              <p class="card-text"> <strong>From:</strong> <%= transaction.start_date %> <strong>To:</strong> <%= transaction.end_date %></p>
+              <p><%=transaction.artwork.title%></p>
+            </div>
+          </div>
+          <% end %>
+      </div>
+
+         <div class="col-lg-6 col-sm-12">
+          <h3> Artwork bought</h3>
+          <% @buy_transactions.each do |transaction| %>
+          <div class="art-card fixed-height-two">
+            <div class="transaction">
+              <p class="card-text"> <strong>From:</strong> <%= transaction.start_date %> <strong>To:</strong> <%= transaction.end_date %></p>
+              <p><%=transaction.artwork.title%></p>
+              <small><%= transaction.confirmation %> </small>
+            </div>
+          </div>
+          <% end %>
+      </div>
+
+      </div>
+  </div>
+  </div>

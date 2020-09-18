@@ -18,7 +18,8 @@ class TransactionsController < ApplicationController
 
   def index
     @buy_transactions = current_user.transactions
-    @sell_transactions = current_user.sell_transactions
+    @pending_transactions = current_user.sell_transactions.where(confirmation: "pending")
+    @sold_transactions = current_user.sell_transactions.where(confirmation: "accepted")
   end
 
   def accept
