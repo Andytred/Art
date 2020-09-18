@@ -1,9 +1,13 @@
 <div class="container">
-  <div class="row">
-    <!-- cl_image_tag transaction.artwor, class: "artwork-img w-100" -->
+  <div class="d-flex py-3">
+    <div style="background-image: url(<%= cl_image_path current_user.photo.key%>)" class="avatar"></div>
+    <div class="ml-3 bg-white flex-grow-1 text-center p-3">
+      <h5> <%= current_user.first_name  %> </h5>
+      <h5> <%= current_user.last_name  %></h5>
+    </div>
   </div>
 
-  <div class="container">
+  <div class="mt-5">
     <h3>Pending</h3>
       <div class="pendingtransactions">
            <% @pending_transactions.each do |transaction| %>
@@ -24,7 +28,7 @@
      <% end %>
     </div>
   </div>
-  <div class="container mt-5">
+  <div class="mt-5">
 
     <div class="row">
       <div class="col-lg-6 col-sm-12">
