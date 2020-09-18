@@ -30,7 +30,7 @@ Ai’s most celebrated works related to the earthquake were large-scale sculptur
 first_names = ['Andrea', 'Christopher', 'Joan', 'Lionel', 'Xavi', 'Andrés']
 last_names = ['Messi', 'Nadal', 'Guardiola', 'Piqué', '']
 
-30.times do |i|
+10.times do |i|
   user = User.new(
     email:   "user_#{i}@gmail.com",
     password: "password"
@@ -45,7 +45,7 @@ end
 puts 'Finished!'
 
 puts 'Creating 50 fake artworks...'
-20.times do
+10.times do
   artwork = Artwork.new(
     title:    Faker::BossaNova.song,
     description: long_descriptions.sample,
