@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :artworks
   has_many :transactions, foreign_key: 'buyer_id'
   has_many :sell_transactions, through: :artworks, source: :transactions
+  has_one_attached :photo
 end
