@@ -26,7 +26,7 @@ Muniz’s work prompts a number of important questions regarding contemporary ar
 Ai’s most celebrated works related to the earthquake were large-scale sculptures that utilized backpacks as their primary medium. Remembering consisted of nine thousand of these backpacks arranged so that they spelled out “She lived happily for seven years in this world” in Chinese characters. The highly public and prominent placement of Remembering—it covered the massive front facade of the Haus der Kunst in Munich, one of Europe’s most influential art museums—left little doubt as to the institution’s support of the work. At once minimal, monumental, historical, and very emotional, Remembering stood as a powerful and indelible example of a work of art’s ability to engage directly with ongoing political and social issues.',
 'The Artist is Present was, in some respects, a very simple work. It consisted of Belgrade-born, sixty-three-year-old performance artist Abramović sitting silent and still in a chair across from another chair in which anyone could sit silently (one at a time) for however long they wanted during business hours at the Museum of Modern Art in New York. Abramović sat for the entire run of her 2010 retrospective, which added up to 736 hours and 30 minutes.Since the millennium, performance—a term currently embraced by some but rejected by other artists who find it too confining or inaccurate—has returned to being considered one of the most progressive art forms of today. Exhibitions such as Abramović’s are undoubtedly one reason for this. Her show drew 850,000 visitors and garnered worldwide media attention, spurring galleries and museums to capitalize on the success.']
 
-30.times do |i|
+10.times do |i|
   user = User.new(
     email:   "user_#{i}@gmail.com",
     password: "password"
@@ -36,7 +36,7 @@ end
 puts 'Finished!'
 
 puts 'Creating 50 fake artworks...'
-20.times do
+10.times do
   artwork = Artwork.new(
     title:    Faker::BossaNova.song,
     description: long_descriptions.sample,
