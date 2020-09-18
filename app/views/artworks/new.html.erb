@@ -7,9 +7,10 @@
       <div class="add_form w-100 mt-4 px-4">
         <%= f.input :title %>
         <%= f.input :description %>
+        <%= f.input :address %>
         <%= f.input :price_per_hour %>
-            <%= f.input :photo, as: :file %>
-            <%= f.button :submit, class: "btn btn-lg btn-block" %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: "btn btn-lg btn-block" %>
       </div>
     <% end %>
   </div>
